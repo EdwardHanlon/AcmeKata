@@ -1,0 +1,13 @@
+C:\Programs\AcmeKata\AcmeKata.Tests\obj\Debug\AcmeKata.Tests.csprojResolveAssemblyReference.cache
+C:\Programs\AcmeKata\AcmeKata.Tests\bin\Debug\AcmeKata.Tests.dll.config
+C:\Programs\AcmeKata\AcmeKata.Tests\bin\Debug\AcmeKata.Tests.dll
+C:\Programs\AcmeKata\AcmeKata.Tests\bin\Debug\AcmeKata.Tests.pdb
+C:\Programs\AcmeKata\AcmeKata.Tests\bin\Debug\AcmeKata.exe
+C:\Programs\AcmeKata\AcmeKata.Tests\bin\Debug\nunit.framework.dll
+C:\Programs\AcmeKata\AcmeKata.Tests\bin\Debug\Ninject.dll
+C:\Programs\AcmeKata\AcmeKata.Tests\bin\Debug\AcmeKata.pdb
+C:\Programs\AcmeKata\AcmeKata.Tests\bin\Debug\nunit.framework.xml
+C:\Programs\AcmeKata\AcmeKata.Tests\bin\Debug\Ninject.pdb
+C:\Programs\AcmeKata\AcmeKata.Tests\bin\Debug\Ninject.xml
+C:\Programs\AcmeKata\AcmeKata.Tests\obj\Debug\AcmeKata.Tests.dll
+C:\Programs\AcmeKata\AcmeKata.Tests\obj\Debug\AcmeKata.Tests.pdb
