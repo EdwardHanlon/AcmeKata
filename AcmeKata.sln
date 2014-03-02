@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeKata", "AcmeKata\AcmeKa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeKata.Tests", "AcmeKata.Tests\AcmeKata.Tests.csproj", "{7BF36ECF-648F-44C3-9EE2-C8CF36D891CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeKata.WebUI", "AcmeKata.WebUI\AcmeKata.WebUI.csproj", "{96A122B0-8D60-4172-9825-4D06015DB736}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{7BF36ECF-648F-44C3-9EE2-C8CF36D891CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BF36ECF-648F-44C3-9EE2-C8CF36D891CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BF36ECF-648F-44C3-9EE2-C8CF36D891CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96A122B0-8D60-4172-9825-4D06015DB736}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96A122B0-8D60-4172-9825-4D06015DB736}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96A122B0-8D60-4172-9825-4D06015DB736}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96A122B0-8D60-4172-9825-4D06015DB736}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

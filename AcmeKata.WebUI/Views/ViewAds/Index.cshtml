@@ -1,0 +1,16 @@
+﻿@model IEnumerable<AcmeKata.Models.Ad>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Ads in Paper:</h2>
+
+<ul>
+    @foreach (var ad in Model)
+    {
+        <li>@ad.Name</li>
+    }
+</ul>
+
+@Html.ActionLink("Return Home", "Index", "Home")

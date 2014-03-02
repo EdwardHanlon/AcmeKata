@@ -10,13 +10,37 @@ using AcmeKata.Models;
 
 namespace AcmeKata.Entities.Concrete
 {
-    class AccessDataWriter : IDataWriter
+    public class AccessDataWriter : IDataWriter
     {
         private readonly string connStr;
 
         public AccessDataWriter()
         {
-            connStr = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + @"\Data\Acme Newspapers.accdb";
+            connStr = AppDomain.CurrentDomain.GetData("DataDirectory") + @"\Acme Newspapers.accdb";
+        }
+
+        public void SaveNewNewspaper(Newspaper newspaper)
+        {
+            using (var conn = new OleDbConnection(string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Persist Security Info=False;", connStr)))
+            {
+                conn.Open();
+                var cmd = new OleDbCommand("", conn);
+                cmd.CommandText = @"INSERT INTO [Newspapers] (IssueDate) VALUES (@a)";
+                cmd.Parameters.Add(new OleDbParameter("a", newspaper.IssueDate.ToOADate()));
+
+                cmd.ExecuteNonQuery();
+
+                foreach (var ad in newspaper.AdList)
+                {
+                    var adCmd = new OleDbCommand("", conn);
+                    adCmd.CommandText = @"INSERT INTO [Ads] (NewspaperId, Name) VALUES (@a, @b)";
+
+                    adCmd.Parameters.Add(new OleDbParameter("a", newspaper.Id));
+                    adCmd.Parameters.Add(new OleDbParameter("b", ad.Name));
+
+                    adCmd.ExecuteNonQuery();
+                }
+            }
         }
 
         public void SaveNewNewspapers(IEnumerable<Newspaper> newspapers)
@@ -52,23 +76,19 @@ namespace AcmeKata.Entities.Concrete
                 }
             }
         }
-
-        public void SaveNewAds(Newspaper newspaper)
+        
+        public void SaveNewAd(int newspaperId, Ad ad)
         {
             using (var conn = new OleDbConnection(string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Persist Security Info=False;", connStr)))
             {
                 conn.Open();
-                
-                foreach (var ad in newspaper.AdList)
-                {
-                    var adCmd = new OleDbCommand("", conn);
-                    adCmd.CommandText = @"INSERT INTO [Ads] (NewspaperId, Name) VALUES (@a, @b)";
+                var adCmd = new OleDbCommand("", conn);
+                adCmd.CommandText = @"INSERT INTO [Ads] (NewspaperId, Name) VALUES (@a, @b)";
 
-                    adCmd.Parameters.Add(new OleDbParameter("a", newspaper.Id));
-                    adCmd.Parameters.Add(new OleDbParameter("b", ad.Name));
+                adCmd.Parameters.Add(new OleDbParameter("a", newspaperId));
+                adCmd.Parameters.Add(new OleDbParameter("b", ad.Name));
 
-                    adCmd.ExecuteNonQuery();
-                }
+                adCmd.ExecuteNonQuery();
             }
         }
     }

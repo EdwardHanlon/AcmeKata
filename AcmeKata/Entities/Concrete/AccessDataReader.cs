@@ -11,13 +11,13 @@ using IDataReader = AcmeKata.Entities.Interfaces.IDataReader;
 
 namespace AcmeKata.Entities.Concrete
 {
-    class AccessDataReader : IDataReader
+    public class AccessDataReader : IDataReader
     {
         private readonly string connStr;
 
         public AccessDataReader()
         {
-            connStr = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + @"\Data\Acme Newspapers.accdb";
+            connStr = AppDomain.CurrentDomain.GetData("DataDirectory") + @"\Acme Newspapers.accdb";
         }
 
         public IEnumerable<Newspaper> GetAllNewspapers()
@@ -41,28 +41,26 @@ namespace AcmeKata.Entities.Concrete
                 yield return new Newspaper
                 {
                     Id = Convert.ToInt32(newspaper.ItemArray[0]),
-                    AdList = GetAllAdsForNewspaperId(Convert.ToInt32(newspaper.ItemArray[0])).ToList(),
+                    AdList = GetAllAdsForPaper(Convert.ToInt32(newspaper.ItemArray[0])).ToList(),
                     IssueDate = parsedDate
                 };
             }
         }
 
-        private IEnumerable<Ad> GetAllAdsForNewspaperId(int id)
+        public IEnumerable<Ad> GetAllAdsForPaper(int id)
         {
             var data = new DataSet();
+
             using (var conn = new OleDbConnection(string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Persist Security Info=False;", connStr)))
             {
                 conn.Open();
                 var cmd = new OleDbCommand("", conn);
-                cmd.CommandText = string.Format(@"SELECT [Name] FROM [Ads] WHERE [NewspaperId] = {0};", id);
+                cmd.CommandText = string.Format(@"SELECT [Name] FROM [Ads] WHERE Newspaperid = {0};", id);
                 var dataAdapter = new OleDbDataAdapter(cmd);
                 dataAdapter.Fill(data, "Ads");
             }
 
-            return from DataRow ad in data.Tables["Ads"].Rows select new Ad
-            {
-                Name = ad.ItemArray[0].ToString()
-            };
+            return from DataRow ad in data.Tables["Ads"].Rows select new Ad { Name = ad.ItemArray[0].ToString() };
         }
 
         public int GetMaxId()

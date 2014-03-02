@@ -1,0 +1,25 @@
+﻿@model IEnumerable<AcmeKata.Models.Newspaper>
+
+@{
+    ViewBag.Title = "Acme Newspaper Tracker";
+}
+
+<h2>Newspapers:</h2>
+
+<ul>
+    @foreach (var paper in Model)
+    {
+        <li>Publication Date: @paper.IssueDate.ToShortDateString() Number of Ads: @paper.AdList.Count 
+            @Html.ActionLink("Click to Place new Ad", "Index", "Ad", new {paper.Id}, null)
+            @Html.ActionLink("Click here to view all Ads", "Index", "ViewAds", new {paper.Id}, null)
+        </li>
+    }
+</ul>
+
+<br/>
+
+@using (Html.BeginForm("CreatePaper", "Home", FormMethod.Post))
+{
+    @Html.TextBox("issueDate")
+    <input id="issueDate" name="issueDate" type="submit" value="Create New Paper" />
+}

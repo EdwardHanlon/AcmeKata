@@ -7,9 +7,10 @@ using AcmeKata.Models;
 
 namespace AcmeKata.Entities.Interfaces
 {
-    interface IDataWriter
+    public interface IDataWriter
     {
         void SaveNewNewspapers(IEnumerable<Newspaper> newspaper);
-        void SaveNewAds(Newspaper newspaper);
+        void SaveNewNewspaper(Newspaper newspaper);
+        void SaveNewAd(int newspaperId, Ad ad);
     }
 }

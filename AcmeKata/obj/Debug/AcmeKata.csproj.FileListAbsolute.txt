@@ -1,11 +1,11 @@
-C:\Programs\AcmeKata\AcmeKata\bin\Debug\AcmeKata.exe.config
-C:\Programs\AcmeKata\AcmeKata\bin\Debug\AcmeKata.exe
-C:\Programs\AcmeKata\AcmeKata\bin\Debug\AcmeKata.pdb
-C:\Programs\AcmeKata\AcmeKata\bin\Debug\Ninject.dll
-C:\Programs\AcmeKata\AcmeKata\bin\Debug\Ninject.xml
-C:\Programs\AcmeKata\AcmeKata\obj\Debug\AcmeKata.exe
-C:\Programs\AcmeKata\AcmeKata\obj\Debug\AcmeKata.pdb
-C:\Programs\AcmeKata\AcmeKata\bin\Debug\Ninject.pdb
 C:\Programs\backup AcmeKata\AcmeKata\bin\Debug\AcmeKata.exe.config
 C:\Programs\backup AcmeKata\AcmeKata\obj\Debug\AcmeKata.exe
 C:\Programs\backup AcmeKata\AcmeKata\obj\Debug\AcmeKata.pdb
+C:\Programs\AcmeKata\AcmeKata\bin\Debug\AcmeKata.dll.config
+C:\Programs\AcmeKata\AcmeKata\bin\Debug\AcmeKata.dll
+C:\Programs\AcmeKata\AcmeKata\bin\Debug\AcmeKata.pdb
+C:\Programs\AcmeKata\AcmeKata\bin\Debug\Ninject.dll
+C:\Programs\AcmeKata\AcmeKata\bin\Debug\Ninject.pdb
+C:\Programs\AcmeKata\AcmeKata\bin\Debug\Ninject.xml
+C:\Programs\AcmeKata\AcmeKata\obj\Debug\AcmeKata.dll
+C:\Programs\AcmeKata\AcmeKata\obj\Debug\AcmeKata.pdb
