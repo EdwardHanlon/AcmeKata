@@ -9,7 +9,6 @@ namespace AcmeKata.Entities.Interfaces
 {
     public interface IDataWriter
     {
-        void SaveNewNewspapers(IEnumerable<Newspaper> newspaper);
         void SaveNewNewspaper(Newspaper newspaper);
         void SaveNewAd(int newspaperId, Ad ad);
     }
