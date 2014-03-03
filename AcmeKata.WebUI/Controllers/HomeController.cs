@@ -26,12 +26,6 @@ namespace AcmeKata.WebUI.Controllers
             return View(newspapers);
         }
 
-        public ActionResult SavePapers(IEnumerable<Newspaper> newNewspapers)
-        {
-            writer.SaveNewNewspapers(newNewspapers);
-            return RedirectToAction("Index");
-        }
-        
         public ActionResult PlaceAd()
         {
             string adText = TempData["adText"].ToString();
