@@ -15,8 +15,7 @@ namespace AcmeKata.Models
             get { return name; }
             set { name = string.IsNullOrEmpty(value) ? "" : value; }
         }
-
-
+        
         public Ad(string adName = "")
         {
             Name = adName;

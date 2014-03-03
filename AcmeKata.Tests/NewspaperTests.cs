@@ -16,13 +16,37 @@ namespace AcmeKata.Tests
         }
 
         [Test]
-        public void CreateNewspaper_GivenNewspaperWithTestDate_IssueDateAndTestDateMatch()
+        public void CreateNewspaper_GivenNewspaperWithNullIssueDateAndId_ReturnsNewspaperWithTodaysDate()
+        {
+            var newsPaper = new Newspaper(null, 1);
+
+            Assert.AreEqual(DateTime.Now.Date, newsPaper.IssueDate);
+        }
+
+        [Test]
+        public void CreateNewspaper_GivenNewspaperWithTestDateAndNoId_IssueDateAndTestDateMatch()
+        {
+            var newsPaper = new Newspaper(new DateTime(2012, 2, 28));
+
+            Assert.AreEqual(new DateTime(2012, 2, 28), newsPaper.IssueDate);
+        }
+
+        [Test]
+        public void CreateNewspaper_GivenNewspaperWithTestDateAndId_IssueDateAndTestDateMatch()
         {
             var newsPaper = new Newspaper(new DateTime(2012, 2, 28), 1);
 
             Assert.AreEqual(new DateTime(2012, 2, 28), newsPaper.IssueDate);
         }
 
+        [Test]
+        public void CreateNewspaper_GivenNewspaperWithNoAds_AdListIsNonNullWithCountZero()
+        {
+            var newsPaper = new Newspaper();
+
+            Assert.AreEqual(0, newsPaper.AdList.Count);
+        }
+        
         [Test]
         public void PlaceAd_GivenANewNewspaperAndNewAd_CanAddAdToNewsPaper()
         {

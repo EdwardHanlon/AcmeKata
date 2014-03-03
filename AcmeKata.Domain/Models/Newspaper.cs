@@ -23,21 +23,23 @@ namespace AcmeKata.Models
             AdList = new List<Ad>();
         }
 
-        public Newspaper(DateTime issueDate, int id)
+        //Constructor with no ID allows for non-RDMS implementation
+        public Newspaper(DateTime? _issueDate)
+        {
+            AdList = new List<Ad>();
+            if (_issueDate != null) IssueDate = (DateTime)_issueDate;
+        }
+
+        public Newspaper(DateTime? _issueDate, int id)
         {
             Id = id;
-            IssueDate = issueDate;
+            if (_issueDate != null) IssueDate = (DateTime) _issueDate;
             AdList = new List<Ad>();
         }
 
         public void PlaceAd(Ad newAd)
         {
             AdList.Add(newAd);
-        }
-
-        public IEnumerable<Ad> GetAds()
-        {
-            return AdList;
         }
     }
 }
