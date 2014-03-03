@@ -34,20 +34,25 @@ namespace AcmeKata.WebUI.Controllers
         
         public ActionResult PlaceAd()
         {
-            var adToPlace = new Ad(TempData["adText"].ToString());
-            var newPaper = newspapers.FirstOrDefault(x => x.Id == Convert.ToInt32(TempData["paperId"].ToString()));
+            string adText = TempData["adText"].ToString();
 
-            if (newPaper != null)
+            if (!string.IsNullOrEmpty(adText))
             {
-                //Persist New Ad in Database
-                newPaper.PlaceAd(adToPlace);
-                writer.SaveNewAd(newPaper.Id, adToPlace);
+                var adToPlace = new Ad(adText);
+                var newspaperToGetNewAd = newspapers.FirstOrDefault(x => x.Id == Convert.ToInt32(TempData["newspaperId"].ToString()));
+
+                if (newspaperToGetNewAd != null)
+                {
+                    //Persist New Ad in Database
+                    newspaperToGetNewAd.PlaceAd(adToPlace);
+                    writer.SaveNewAd(newspaperToGetNewAd.Id, adToPlace);
+                }
             }
 
             return RedirectToAction("Index");
         }
 
-        public ActionResult CreatePaper(DateTime? issueDate)
+        public ActionResult CreateNewspaper(DateTime? issueDate)
         {
             DateTime dateToUse = issueDate == null ? DateTime.Today.Date : (DateTime)issueDate;
 

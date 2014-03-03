@@ -4,9 +4,9 @@
 
 <h2>Place New Ad</h2>
 
-@using (Html.BeginForm("GetAdText", "Ad", FormMethod.Post))
+@using (Html.BeginForm("GetAdText", "NewAd", FormMethod.Post))
 {
-    @Model
+    @Html.Label("adText", "Please enter the text for this ad:")
     @Html.TextBox("adText")
     <input id="adText" name="adText" type="submit" value="Place Ad" />
 }

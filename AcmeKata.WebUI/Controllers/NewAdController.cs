@@ -8,11 +8,11 @@ using AcmeKata.Models;
 
 namespace AcmeKata.WebUI.Controllers
 {
-    public class AdController : Controller
+    public class NewAdController : Controller
     {
-        public ActionResult Index(int id)
+        public ActionResult NewAd(int id)
         {
-            TempData["paperId"] = id;
+            TempData["newspaperId"] = id;
             return View();
         }
 

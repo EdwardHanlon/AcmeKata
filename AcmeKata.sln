@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeKata", "AcmeKata\AcmeKata.csproj", "{E32AB32A-3782-4AF9-B963-CBA8DFF3EDB7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeKata.Domain", "AcmeKata\AcmeKata.Domain.csproj", "{E32AB32A-3782-4AF9-B963-CBA8DFF3EDB7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeKata.Tests", "AcmeKata.Tests\AcmeKata.Tests.csproj", "{7BF36ECF-648F-44C3-9EE2-C8CF36D891CA}"
 EndProject

@@ -9,17 +9,19 @@
 <ul>
     @foreach (var paper in Model)
     {
-        <li>Publication Date: @paper.IssueDate.ToShortDateString() Number of Ads: @paper.AdList.Count 
-            @Html.ActionLink("Click to Place new Ad", "Index", "Ad", new {paper.Id}, null)
-            @Html.ActionLink("Click here to view all Ads", "Index", "ViewAds", new {paper.Id}, null)
+        <li>
+            Publication Date: @paper.IssueDate.ToShortDateString() Number of Ads: @paper.AdList.Count
+            @Html.ActionLink("Click to Place new Ad", "NewAd", "NewAd", new {paper.Id}, null)
+            @Html.ActionLink("Click here to view all Ads", "ViewAllAds", "AdManager", new {paper.Id}, null)
         </li>
     }
 </ul>
 
 <br/>
 
-@using (Html.BeginForm("CreatePaper", "Home", FormMethod.Post))
+@using (Html.BeginForm("CreateNewspaper", "Home", FormMethod.Post))
 {
+    @Html.Label("issueDate", "Enter the issue date, if you wish to use today's date you may leave it blank:")
     @Html.TextBox("issueDate")
     <input id="issueDate" name="issueDate" type="submit" value="Create New Paper" />
 }

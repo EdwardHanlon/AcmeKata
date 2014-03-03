@@ -47,25 +47,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\AdManager.cs" />
     <Compile Include="Entities\Concrete\AccessDataReader.cs" />
     <Compile Include="Entities\Concrete\AccessDataWriter.cs" />
     <Compile Include="Entities\Interfaces\IDataReader.cs" />
     <Compile Include="Entities\Interfaces\IDataWriter.cs" />
-    <Compile Include="Helpers\ScreenHelpers.cs" />
-    <Compile Include="Entities\NewspaperManager.cs" />
     <Compile Include="Models\Ad.cs" />
     <Compile Include="Models\Newspaper.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Modules\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

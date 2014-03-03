@@ -7,18 +7,18 @@ using AcmeKata.Entities.Interfaces;
 
 namespace AcmeKata.WebUI.Controllers
 {
-    public class ViewAdsController : Controller
+    public class AdManagerController : Controller
     {
         private IDataReader reader;
 
-        public ViewAdsController(IDataReader _reader)
+        public AdManagerController(IDataReader _reader)
         {
             reader = _reader;
         }
 
-        public ActionResult Index(int id)
+        public ActionResult ViewAllAds(int id)
         {
-            return View(reader.GetAllAdsForPaper(id));
+            return View(reader.GetAllAdsForNewspaperId(id));
         }
     }
 }

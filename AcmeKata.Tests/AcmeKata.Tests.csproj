@@ -55,9 +55,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AcmeKata\AcmeKata.csproj">
+    <ProjectReference Include="..\AcmeKata\AcmeKata.Domain.csproj">
       <Project>{e32ab32a-3782-4af9-b963-cba8dff3edb7}</Project>
-      <Name>AcmeKata</Name>
+      <Name>AcmeKata.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

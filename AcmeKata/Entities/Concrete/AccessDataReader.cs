@@ -41,13 +41,13 @@ namespace AcmeKata.Entities.Concrete
                 yield return new Newspaper
                 {
                     Id = Convert.ToInt32(newspaper.ItemArray[0]),
-                    AdList = GetAllAdsForPaper(Convert.ToInt32(newspaper.ItemArray[0])).ToList(),
+                    AdList = GetAllAdsForNewspaperId(Convert.ToInt32(newspaper.ItemArray[0])).ToList(),
                     IssueDate = parsedDate
                 };
             }
         }
 
-        public IEnumerable<Ad> GetAllAdsForPaper(int id)
+        public IEnumerable<Ad> GetAllAdsForNewspaperId(int id)
         {
             var data = new DataSet();
 

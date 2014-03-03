@@ -10,7 +10,7 @@ namespace AcmeKata.Entities.Interfaces
     public interface IDataReader
     {
         IEnumerable<Newspaper> GetAllNewspapers();
-        IEnumerable<Ad> GetAllAdsForPaper(int id); 
+        IEnumerable<Ad> GetAllAdsForNewspaperId(int id); 
         int GetMaxId();
     }
 }
