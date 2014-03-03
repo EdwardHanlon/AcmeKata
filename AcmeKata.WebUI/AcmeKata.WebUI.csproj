@@ -326,7 +326,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AcmeKata\AcmeKata.Domain.csproj">
+    <ProjectReference Include="..\AcmeKata.Domain\AcmeKata.Domain.csproj">
       <Project>{e32ab32a-3782-4af9-b963-cba8dff3edb7}</Project>
       <Name>AcmeKata.Domain</Name>
     </ProjectReference>
